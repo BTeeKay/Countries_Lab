@@ -1,6 +1,20 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .country {
   padding: 10px;
   border: 1px solid black;
+  width: 400px;
+}
+
+.fave-countries {
+  padding: 10px;
+  border: 1px solid black;
+  width: 400px;
 }
 
 .App {

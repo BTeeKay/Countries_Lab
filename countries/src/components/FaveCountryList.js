@@ -7,7 +7,8 @@ const FaveCountryList = ({ favCountry }) => {
     })
 
     return (
-        <div>
+
+        <div className="fave-countries"><h2>Favourite countries</h2>
             <ul>
                 {list}
             </ul>
