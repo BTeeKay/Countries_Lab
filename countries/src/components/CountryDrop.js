@@ -1,10 +1,20 @@
 import React from 'react'
 import AddFavCountry from './AddFavCountry'
 
-const CountryDrop = () => {
+const CountryDrop = ({countries}) => {
+
+    const options = countries.map((country, index) => {
+        return <option key={index} value={index}>{country.name.common}</option>
+    })
+
+    console.log(options)
+
     return (
         <>
-            <div>CountryDrop</div>
+            <select>
+                <option>Select a Country</option>
+                {options}
+            </select>
             <AddFavCountry />
         </>
 
