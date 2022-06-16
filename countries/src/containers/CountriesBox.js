@@ -11,7 +11,6 @@ const CountriesBox = () => {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [favCountry, setFavCountry] = useState([]);
 
-
     useEffect(() => {
         getCountries();
     }, [])
@@ -30,9 +29,10 @@ const CountriesBox = () => {
         setFavCountry(favCountry => [...favCountry, country])
     };
 
+
     return (
         <>
-            <Header />
+            <Header countries={countries}/>
             <CountryDropBox countries={countries} onCountryChange={onCountryChange} onFavCountryClick={onFavCountryClick}
                 selectedCountry={selectedCountry} />
             {selectedCountry ? <CountryInfoListBox selectedCountry={selectedCountry} /> :
