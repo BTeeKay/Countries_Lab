@@ -24,13 +24,19 @@ const CountriesBox = () => {
 
     const onCountryChange = (country) => {
         setSelectedCountry(country);
-    }
+    };
+
+    const onFavCountryClick = (country) => {
+        setFavCountry(country)
+    };
 
     return (
         <>
             <Header />
-            <CountryDropBox countries={countries} onCountryChange={onCountryChange} />
-            <CountryInfoListBox selectedCountry={selectedCountry} />
+            <CountryDropBox countries={countries} onCountryChange={onCountryChange} onFavCountryClick={onFavCountryClick}
+            selectedCountry={selectedCountry} />
+            { selectedCountry ? <CountryInfoListBox selectedCountry={selectedCountry}/> :
+            null }
             <CountryFaveItemBox />
         </>
     )

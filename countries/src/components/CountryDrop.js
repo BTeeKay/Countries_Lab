@@ -1,16 +1,20 @@
 import React from 'react'
-import AddFavCountry from './AddFavCountry'
 
-const CountryDrop = ({ countries, onCountryChange }) => {
+const CountryDrop = ({ countries, onCountryChange, onFavCountryClick, selectedCountry}) => {
 
     const options = countries.map((country, index) => {
         return <option key={index} value={index}>{country.name.common}</option>
     })
 
+
     const handleChange = (event) => {
         const chosenIndex = event.target.value;
         const country = countries[chosenIndex];
         onCountryChange(country);
+    }
+
+    const handleClick = () => {
+        onFavCountryClick(selectedCountry);
     }
 
     return (
@@ -19,7 +23,11 @@ const CountryDrop = ({ countries, onCountryChange }) => {
                 <option>Select a Country</option>
                 {options}
             </select>
-            <AddFavCountry />
+            <div>
+                <button onClick={handleClick}>
+                    Add Favourite!
+                </button>
+            </div>
         </>
 
 
