@@ -6,7 +6,7 @@ const Header = ({countries}) => {
         return acc + country.population
     }, 0)
 
-    console.log(total)
+    
 
     return (
         <div>

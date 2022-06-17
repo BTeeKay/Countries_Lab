@@ -6,6 +6,7 @@ const CountryDrop = ({ countries, onCountryChange, onFavCountryClick, selectedCo
         return <option key={index} value={index}>{country.name.common}</option>
     })
 
+    console.log(countries[0])
 
     const handleChange = (event) => {
         const chosenIndex = event.target.value;
